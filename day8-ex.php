@@ -57,21 +57,24 @@
     // Exercise four: =====================================
         echo "fizzbuzz <br/>";
         function fizzbuzz($min, $max){
-            for($i = $min; $i < ($max+1); $i++){
-                $str = "";
-                if($i % 3 == 0){
-                    $str .= "Back-End ";
+            if($min < $max){
+                for($i = $min; $i < ($max+1); $i++){
+                    $str = "";
+                    if($i % 3 == 0){
+                        $str .= "Back-End ";
+                    }
+                    if($i % 5 == 0){
+                        $str .= "Front-End";
+                    }
+                    if($str == ""){
+                        $str = $i;
+                    }
+                    echo $str."<br/>";
                 }
-                if($i % 5 == 0){
-                    $str .= "Front-End";
-                }
-                if($str == ""){
-                    $str = $i;
-                }
-                echo $str."<br/>";
             }
+            else{echo "The minimum is bigger than the maximum, choose again.";}
         }
-        fizzbuzz(-50,50);
+        fizzbuzz(20,-50);
     ?>
 </body>
 </html>

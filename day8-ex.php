@@ -72,7 +72,7 @@
                     echo $str."<br/>";
                 }
             }
-            else{echo "The minimum is bigger than the maximum, choose again.";}
+            else{echo "The minimum is bigger than the maximum, try again...";}
         }
         fizzbuzz(20,-50);
     ?>

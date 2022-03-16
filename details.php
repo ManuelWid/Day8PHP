@@ -50,7 +50,6 @@ mysqli_close($connect);
    <body>
        <div class="manageProduct w-75 mt-3">
            <p class='h2'>Meals</p>
-           <img src="<?php echo $imgsrc; ?>" width="350px" title="Image not found">
             <table class='table table-striped'>
                <thead class='table-success'>
                    <tr>
@@ -66,6 +65,7 @@ mysqli_close($connect);
 
                 </tbody>
            </table>
+           <img src="<?php echo $imgsrc; ?>" width="350px" title="Image not found">
        </div>
    </body>
 </html>

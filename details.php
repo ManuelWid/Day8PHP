@@ -6,9 +6,10 @@ $sql = "SELECT * FROM dishes where dish_id = $_GET[dish_id]";
 $result = mysqli_query($connect ,$sql);
 $tbody='';
 if(mysqli_num_rows($result)  > 0) {    
-   while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){   
+   while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){ 
+        $imgsrc = $row['image'];
         $tbody .=  "<tr>
-        <td><img class='img-thumbnail' src='" .$row['image']."'</td>
+        <td><img class='img-thumbnail' src='" .$row['image']."'></td>
            <td>" .$row['name']."</td>
            <td>" .$row['price']."€</td>
            <td>" .$row['description']."</td>
@@ -49,7 +50,7 @@ mysqli_close($connect);
    <body>
        <div class="manageProduct w-75 mt-3">
            <p class='h2'>Meals</p>
-
+           <img src="<?php echo $imgsrc; ?>" width="350px" title="Image not found">
             <table class='table table-striped'>
                <thead class='table-success'>
                    <tr>

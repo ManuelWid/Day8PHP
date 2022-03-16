@@ -60,7 +60,7 @@ mysqli_close($connect);
 
                 </tbody>
            </table>
-           <img src="<?php echo $row['image']; ?>" width="350px" title="Image not found">
+           <img src="<?php echo $row['image']; ?>" width="350px" alt="Image not found" class="img-fluid rounded">
        </div>
    </body>
 </html>

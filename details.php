@@ -5,19 +5,14 @@ require_once 'db_connect.php';
 $sql = "SELECT * FROM dishes where dish_id = $_GET[dish_id]";
 $result = mysqli_query($connect ,$sql);
 $tbody='';
-if(mysqli_num_rows($result)  > 0) {    
-   while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){ 
-        $imgsrc = $row['image'];
-        $tbody .=  "<tr>
-        <td><img class='img-thumbnail' src='" .$row['image']."'></td>
-           <td>" .$row['name']."</td>
-           <td>" .$row['price']."€</td>
-           <td>" .$row['description']."</td>
-            </tr>";
-   };
-} else {
-   $tbody =  "<tr><td colspan='5'><center>No Data Available </center></td></tr>";
-}
+ 
+$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+$tbody .=  "<tr>
+    <td><img class='img-thumbnail' src='" .$row['image']."'></td>
+    <td>" .$row['name']."</td>
+    <td>" .$row['price']."€</td>
+    <td>" .$row['description']."</td>
+    </tr>";
 
 mysqli_close($connect);
 ?>
@@ -65,7 +60,7 @@ mysqli_close($connect);
 
                 </tbody>
            </table>
-           <img src="<?php echo $imgsrc; ?>" width="350px" title="Image not found">
+           <img src="<?php echo $row['image']; ?>" width="350px" title="Image not found">
        </div>
    </body>
 </html>

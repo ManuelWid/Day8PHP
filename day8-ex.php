@@ -56,19 +56,22 @@
 
     // Exercise four: =====================================
         echo "fizzbuzz <br/>";
-        for($i = 1; $i < 101; $i++){
-            $str = "";
-            if($i % 3 == 0){
-                $str .= "Back-End ";
+        function fizzbuzz($min, $max){
+            for($i = $min; $i < ($max+1); $i++){
+                $str = "";
+                if($i % 3 == 0){
+                    $str .= "Back-End ";
+                }
+                if($i % 5 == 0){
+                    $str .= "Front-End";
+                }
+                if($str == ""){
+                    $str = $i;
+                }
+                echo $str."<br/>";
             }
-            if($i % 5 == 0){
-                $str .= "Front-End";
-            }
-            if($str == ""){
-                $str = $i;
-            }
-            echo $str."<br/>";
         }
+        fizzbuzz(-50,50);
     ?>
 </body>
 </html>

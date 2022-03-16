@@ -43,7 +43,7 @@
 
     // Exercise three: =====================================
         echo "array with 10 random entries, show the max value <br/>";
-        $arr;
+        $arr = array();
         for($i = 0; $i < 10; $i++){
             $arr[$i] = rand(1,100);
         }

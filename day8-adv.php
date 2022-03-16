@@ -11,6 +11,7 @@ if(mysqli_num_rows($result)  > 0) {
         <td><img class='img-thumbnail' src='" .$row['image']."'</td>
            <td>" .$row['name']."</td>
            <td><a href='details.php?dish_id=" .$row['dish_id']."'><button class='btn btn-primary btn-sm' type='button'>Details</button></a>
+           <a href='delete.php?dish_id=" .$row['dish_id']."'><button class='btn btn-danger btn-sm'type='button'>Delete</button></a>
            </td>
             </tr>";
    };

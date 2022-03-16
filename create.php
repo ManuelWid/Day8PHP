@@ -20,6 +20,7 @@
         if($_POST["img"] && $_POST["name"] && $_POST["price"] && $_POST["desc"]){
             $sql = 'INSERT INTO dishes (`image`, `name`, `price`, `description`) VALUES ("'.$_POST["img"].'","'.$_POST["name"].'","'.$_POST["price"].'","'.$_POST["desc"].'")';
             mysqli_query($connect, $sql);
+            header('Location: day8-adv.php');
         }
         else{
             echo "Please enter all values!";
